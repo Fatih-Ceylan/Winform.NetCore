@@ -11,6 +11,8 @@ namespace WinformCore
         }
         private void buttonShow_Click(object sender , EventArgs e)
         {
+
+
             string outputMessage = string.Format("Kullanıcı Adı: " + textName.Text + "\n" + "Kullanıcı Soyadı: " + textSurname.Text + "\n" + "Aylık Maaşı: " + textMonthlySalary.Text , "Kullanıcı Bilgisi");
             MessageBox.Show(outputMessage , "Personel Bilgisi");
 
@@ -70,8 +72,10 @@ namespace WinformCore
         private void textDailySalary_TextChanged(object sender , EventArgs e)
         {
             //Throws ex when type string or field is empty
-            float daily = float.Parse(textDailySalary.Text);
+            float daily = textDailySalary.Text != "" ? float.Parse(textDailySalary.Text) : 0;
             textMonthlySalary.Text = (daily * 30).ToString("c");
+
+
 
             //    try
             //    {
@@ -92,21 +96,50 @@ namespace WinformCore
             {
                 epName.SetError(textDailySalary , "Only numbers allowed");
             }
+            else textDailySalary.Text = "";
         }
-        private void Temizle_Click(object sender , EventArgs e)
-        {
-            Clear();
-        }
-        void Clear()
-        {
-            textUserSSId.Text = textName.Text = textSurname.Text = textPhone.Text = richTextAddress.Text = textMonthlySalary.Text = textDailySalary.Text = "";
-        }
+
+
         private void textPhone_Validating(object sender , System.ComponentModel.CancelEventArgs e)
         {
             int parsedValue;
             if (!int.TryParse(textPhone.Text , out parsedValue))
             {
                 epName.SetError(textPhone , "Only numbers allowed");
+            }
+        }
+        private void Temizle_Click(object sender , EventArgs e)
+        {
+            ClearTextBoxes(this);
+        }
+        void Clear()
+        {           /*Old clear method*/
+            //textUserSSId.Text = textName.Text = textSurname.Text = textPhone.Text = richTextAddress.Text = textMonthlySalary.Text = textDailySalary.Text = "";
+        }
+        private void ClearTextBoxes(Control control)
+        {
+            foreach (Control c in control.Controls)
+            {
+                if (c is TextBox)
+                {
+                    ((TextBox) c).Clear();
+                }
+                if (c is CheckBox)
+                {
+                    ((CheckBox) c).Checked = false;
+                }
+                if (c is RadioButton)
+                {
+                    ((RadioButton) c).Checked = false;
+                }
+                if (c is RichTextBox)
+                {
+                    ((RichTextBox) c).Clear();
+                }
+                if (c.HasChildren)
+                {
+                    ClearTextBoxes(c);
+                }
             }
         }
 
