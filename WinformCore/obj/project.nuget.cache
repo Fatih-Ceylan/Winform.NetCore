@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "9mpo3l7f4qo4uZRLA4Bq2uG9OCCM6v635PX0I7pl7Tic8vIWtcHloml+vvuqHSAj1kbZpsk2L0ui+fX5Mb8U4Q==",
+  "dgSpecHash": "1LsigVy5lCC/e9DiVWXj7dY0hRH11rfTVe4qxYYgK1cZPkK5vkSKs/v9+ymPbvYxSq1jCIsEJS7HWbkEHD0edw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\feti\\source\\repos\\Winform.NetCore\\WinformCore\\WinformCore.csproj",
+  "projectFilePath": "C:\\Users\\feti\\Documents\\GitHub\\Winform.NetCore\\WinformCore\\WinformCore.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

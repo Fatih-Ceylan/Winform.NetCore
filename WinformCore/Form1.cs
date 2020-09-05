@@ -11,8 +11,6 @@ namespace WinformCore
         }
         private void buttonShow_Click(object sender , EventArgs e)
         {
-
-
             string outputMessage = string.Format("Kullanıcı Adı: " + textName.Text + "\n" + "Kullanıcı Soyadı: " + textSurname.Text + "\n" + "Aylık Maaşı: " + textMonthlySalary.Text , "Kullanıcı Bilgisi");
             MessageBox.Show(outputMessage , "Personel Bilgisi");
 
@@ -26,6 +24,11 @@ namespace WinformCore
             if (!int.TryParse(textUserSSId.Text , out parsedValue))
             {
                 epName.SetError(textUserSSId , "Only numbers allowed");
+            }
+            else
+            {
+                e.Cancel = false;
+                epName.SetError(textUserSSId , "");
             }
         }
         private void textName_Validating(object sender , System.ComponentModel.CancelEventArgs e)
@@ -71,18 +74,20 @@ namespace WinformCore
         }
         private void textDailySalary_TextChanged(object sender , EventArgs e)
         {
-            if (float.TryParse(textDailySalary.Text , out float outputValue))
+            string commaConvert = textDailySalary.Text.Replace("." , ",");
+            if (float.TryParse(commaConvert , out float outputValue))
             {
                 textMonthlySalary.Text = (outputValue * 30).ToString("c");
+                epName.SetError(textDailySalary , "");
             }
             else
             {
                 epName.SetError(textDailySalary , "Only numbers allowed");
                 textDailySalary.Clear();
-                textMonthlySalary.Clear();
+                textMonthlySalary.Text = "";
             }
 
-            #region oldWays
+            #region oldApproach
             //Throws ex when type string or field is empty
             //float daily = textDailySalary.Text != "" ? float.Parse(textDailySalary.Text) : 0;
             //textMonthlySalary.Text = (daily * 30).ToString("c");
@@ -103,8 +108,6 @@ namespace WinformCore
         }
         private void textDailySalary_Validating(object sender , System.ComponentModel.CancelEventArgs e)
         {
-
-
             //float parsedValue;
             //if (!float.TryParse(textDailySalary.Text , out parsedValue))
             //{
@@ -112,12 +115,9 @@ namespace WinformCore
             //    textMonthlySalary.Text = "";
             //}
         }
-
-
         private void textPhone_Validating(object sender , System.ComponentModel.CancelEventArgs e)
         {
-            int parsedValue;
-            if (!int.TryParse(textPhone.Text , out parsedValue))
+            if (!int.TryParse(textPhone.Text , out int parsedValue))
             {
                 epName.SetError(textPhone , "Only numbers allowed");
             }
@@ -126,10 +126,7 @@ namespace WinformCore
         {
             ClearTextBoxes(this);
         }
-        void Clear()
-        {           /*Old clear method*/
-            //textUserSSId.Text = textName.Text = textSurname.Text = textPhone.Text = richTextAddress.Text = textMonthlySalary.Text = textDailySalary.Text = "";
-        }
+
         private void ClearTextBoxes(Control control)
         {
             foreach (Control c in control.Controls)
@@ -155,6 +152,10 @@ namespace WinformCore
                     ClearTextBoxes(c);
                 }
             }
+        }
+        void Clear()
+        {           /*Old clear method*/
+            //textUserSSId.Text = textName.Text = textSurname.Text = textPhone.Text = richTextAddress.Text = textMonthlySalary.Text = textDailySalary.Text = "";
         }
 
         //bool CheckEmpty()

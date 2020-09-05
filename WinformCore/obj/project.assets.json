@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\feti\\source\\repos\\Winform.NetCore\\WinformCore\\WinformCore.csproj",
+      "projectUniqueName": "C:\\Users\\feti\\Documents\\GitHub\\Winform.NetCore\\WinformCore\\WinformCore.csproj",
       "projectName": "Winform.NetCore",
-      "projectPath": "C:\\Users\\feti\\source\\repos\\Winform.NetCore\\WinformCore\\WinformCore.csproj",
+      "projectPath": "C:\\Users\\feti\\Documents\\GitHub\\Winform.NetCore\\WinformCore\\WinformCore.csproj",
       "packagesPath": "C:\\Users\\feti\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\feti\\source\\repos\\Winform.NetCore\\WinformCore\\obj\\",
+      "outputPath": "C:\\Users\\feti\\Documents\\GitHub\\Winform.NetCore\\WinformCore\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
