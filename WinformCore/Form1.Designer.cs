@@ -47,7 +47,7 @@
             this.label9 = new System.Windows.Forms.Label();
             this.richTextAddress = new System.Windows.Forms.RichTextBox();
             this.buttonClear = new System.Windows.Forms.Button();
-            this.epName = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.groupBoxMilitary = new System.Windows.Forms.GroupBox();
             this.radioButton4 = new System.Windows.Forms.RadioButton();
             this.radioButton3 = new System.Windows.Forms.RadioButton();
@@ -55,8 +55,7 @@
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.groupBoxGender = new System.Windows.Forms.GroupBox();
             this.radioButton5 = new System.Windows.Forms.RadioButton();
-            this.button1 = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.epName)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.groupBoxMilitary.SuspendLayout();
             this.groupBoxGender.SuspendLayout();
             this.SuspendLayout();
@@ -102,9 +101,10 @@
             // 
             this.textUserSSId.Location = new System.Drawing.Point(13, 41);
             this.textUserSSId.Name = "textUserSSId";
+            this.textUserSSId.PlaceholderText = "TC Kimlik No Giriniz";
             this.textUserSSId.Size = new System.Drawing.Size(142, 23);
             this.textUserSSId.TabIndex = 0;
-            this.textUserSSId.Validating += new System.ComponentModel.CancelEventHandler(this.textUserId_Validating);
+            this.textUserSSId.TextChanged += new System.EventHandler(this.textUserSSId_TextChanged);
             // 
             // textDailySalary
             // 
@@ -229,9 +229,9 @@
             this.buttonClear.UseVisualStyleBackColor = true;
             this.buttonClear.Click += new System.EventHandler(this.Temizle_Click);
             // 
-            // epName
+            // errorProvider
             // 
-            this.epName.ContainerControl = this;
+            this.errorProvider.ContainerControl = this;
             // 
             // groupBoxMilitary
             // 
@@ -313,22 +313,12 @@
             this.radioButton5.Text = "Diğer";
             this.radioButton5.UseVisualStyleBackColor = true;
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(494, 316);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 16;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.groupBoxGender);
             this.Controls.Add(this.groupBoxMilitary);
             this.Controls.Add(this.buttonClear);
@@ -349,7 +339,7 @@
             this.Controls.Add(this.buttonShow);
             this.Name = "Form1";
             this.Text = "Form1";
-            ((System.ComponentModel.ISupportInitialize)(this.epName)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
             this.groupBoxMilitary.ResumeLayout(false);
             this.groupBoxMilitary.PerformLayout();
             this.groupBoxGender.ResumeLayout(false);
@@ -378,7 +368,7 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.RichTextBox richTextAddress;
         private System.Windows.Forms.Button buttonClear;
-        private System.Windows.Forms.ErrorProvider epName;
+        private System.Windows.Forms.ErrorProvider errorProvider;
         private System.Windows.Forms.GroupBox groupBoxMilitary;
         private System.Windows.Forms.RadioButton radioButton3;
         private System.Windows.Forms.RadioButton radioButton2;
@@ -386,7 +376,6 @@
         private System.Windows.Forms.RadioButton radioButton4;
         private System.Windows.Forms.GroupBox groupBoxGender;
         private System.Windows.Forms.RadioButton radioButton5;
-        private System.Windows.Forms.Button button1;
     }
 }
 

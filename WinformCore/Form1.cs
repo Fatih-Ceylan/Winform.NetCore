@@ -16,34 +16,51 @@ namespace WinformCore
 
             //MessageBox.Show("Kullanıcı Adı: " + textName.Text + "\n" + "Aylık Maaşı: " + textMonthlySalary.Text , "Kullanıcı Bilgisi");
         }
-        private void textUserId_Validating(object sender , System.ComponentModel.CancelEventArgs e)
+        private void textUserSSId_TextChanged(object sender , EventArgs e)
         {
-            textUserSSId.PlaceholderText = "TC Kimlik No Giriniz...";
-            // didn't understand why out parameter is required
-            int parsedValue;
-            if (!int.TryParse(textUserSSId.Text , out parsedValue))
+            //textUserSSId.PlaceholderText = "TC Kimlik No Giriniz...";
+            if (!int.TryParse(textUserSSId.Text , out int parsedValue))
             {
-                epName.SetError(textUserSSId , "Only numbers allowed");
+                errorProvider.SetError(textUserSSId , "Only numbers allowed");
+                textUserSSId.Text = "";
             }
             else
             {
-                e.Cancel = false;
-                epName.SetError(textUserSSId , "");
+                errorProvider.SetError(textUserSSId , "");
             }
         }
+
+        #region ValidatingUserSSId
+
+        //private void textUserId_Validating(object sender , System.ComponentModel.CancelEventArgs e)
+        //{ 
+        //    //// didn't understand why out parameter is required
+        //    //int parsedValue;
+        //    //if (!int.TryParse(textUserSSId.Text , out parsedValue))
+        //    //{
+        //    //    epName.SetError(textUserSSId , "Only numbers allowed");
+        //    //}
+        //    //else
+        //    //{
+        //    //    e.Cancel = false;
+        //    //    epName.SetError(textUserSSId , "");
+        //    //}
+        //}
+
+        #endregion
         private void textName_Validating(object sender , System.ComponentModel.CancelEventArgs e)
         {
-            textName.PlaceholderText = "Ad Giriniz...";
+            //textName.PlaceholderText = "Kullanıcı Adını Lütfen Giriniz...";
             if (string.IsNullOrWhiteSpace(textName.Text))
             {
-                //formAutoValidate enabled
+                //Since FormAutoValidate enabled no need e.Cancel definition
                 e.Cancel = true;
-                epName.SetError(textName , "Name Required!");
+                errorProvider.SetError(textName , "Name Required!");
             }
             else
             {
                 e.Cancel = false;
-                epName.SetError(textName , "");
+                errorProvider.SetError(textName , "");
             }
         }
         private void textSurname_Validating(object sender , System.ComponentModel.CancelEventArgs e)
@@ -51,13 +68,24 @@ namespace WinformCore
             //textSurname.PlaceholderText = "Soyad Giriniz...";
             if (string.IsNullOrWhiteSpace(textSurname.Text))
             {
-                e.Cancel = true;
-                epName.SetError(textSurname , "Surname Required!");
+                errorProvider.SetError(textSurname , "Surname Required!");
+                textSurname.Text = "";
             }
             else
             {
-                e.Cancel = false;
-                epName.SetError(textSurname , "");
+                errorProvider.SetError(textSurname , "");
+            }
+        }
+        private void textPhone_Validating(object sender , System.ComponentModel.CancelEventArgs e)
+        {
+            if (!int.TryParse(textPhone.Text , out int parsedValue))
+            {
+                errorProvider.SetError(textPhone , "Only numbers allowed");
+                textPhone.Text = "";
+            }
+            else
+            {
+                errorProvider.SetError(textPhone , "");
             }
         }
         private void radioWoman_CheckedChanged(object sender , EventArgs e)
@@ -78,11 +106,11 @@ namespace WinformCore
             if (float.TryParse(commaConvert , out float outputValue))
             {
                 textMonthlySalary.Text = (outputValue * 30).ToString("c");
-                epName.SetError(textDailySalary , "");
+                errorProvider.SetError(textDailySalary , "");
             }
             else
             {
-                epName.SetError(textDailySalary , "Only numbers allowed");
+                errorProvider.SetError(textDailySalary , "Only numbers allowed");
                 textDailySalary.Clear();
                 textMonthlySalary.Text = "";
             }
@@ -115,18 +143,10 @@ namespace WinformCore
             //    textMonthlySalary.Text = "";
             //}
         }
-        private void textPhone_Validating(object sender , System.ComponentModel.CancelEventArgs e)
-        {
-            if (!int.TryParse(textPhone.Text , out int parsedValue))
-            {
-                epName.SetError(textPhone , "Only numbers allowed");
-            }
-        }
         private void Temizle_Click(object sender , EventArgs e)
         {
             ClearTextBoxes(this);
         }
-
         private void ClearTextBoxes(Control control)
         {
             foreach (Control c in control.Controls)
