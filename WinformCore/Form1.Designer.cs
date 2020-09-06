@@ -105,6 +105,7 @@
             this.textUserSSId.Size = new System.Drawing.Size(142, 23);
             this.textUserSSId.TabIndex = 0;
             this.textUserSSId.TextChanged += new System.EventHandler(this.textUserSSId_TextChanged);
+            this.textUserSSId.Validating += new System.ComponentModel.CancelEventHandler(this.textUserSSId_Validating);
             // 
             // textDailySalary
             // 

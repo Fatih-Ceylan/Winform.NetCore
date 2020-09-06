@@ -9,16 +9,35 @@ namespace WinformCore
         {
             InitializeComponent();
         }
+        bool IsValid()
+        {
+            foreach (Control c in errorProvider.ContainerControl.Controls)
+                if (errorProvider.GetError(c) != "")
+                    return false;
+            return true;
+        }
         private void buttonShow_Click(object sender , EventArgs e)
         {
-            string outputMessage = string.Format("Kullanıcı Adı: " + textName.Text + "\n" + "Kullanıcı Soyadı: " + textSurname.Text + "\n" + "Aylık Maaşı: " + textMonthlySalary.Text , "Kullanıcı Bilgisi");
-            MessageBox.Show(outputMessage , "Personel Bilgisi");
-
+            if (!IsValid())
+            {
+                MessageBox.Show("Lütfen Önce Gerekli Alanları Doldurunuz");
+            }
+            else
+            {
+                string outputMessage = string.Format("Kullanıcı Adı: " + textName.Text + "\n" + "Kullanıcı Soyadı: " + textSurname.Text + "\n" + "Aylık Maaşı: " + textMonthlySalary.Text , "Kullanıcı Bilgisi");
+                MessageBox.Show(outputMessage , "Personel Bilgisi");
+            }
             //MessageBox.Show("Kullanıcı Adı: " + textName.Text + "\n" + "Aylık Maaşı: " + textMonthlySalary.Text , "Kullanıcı Bilgisi");
         }
         private void textUserSSId_TextChanged(object sender , EventArgs e)
         {
             //textUserSSId.PlaceholderText = "TC Kimlik No Giriniz...";
+        }
+
+        #region ValidatingUserSSId
+
+        private void textUserSSId_Validating(object sender , System.ComponentModel.CancelEventArgs e)
+        {
             if (!int.TryParse(textUserSSId.Text , out int parsedValue))
             {
                 errorProvider.SetError(textUserSSId , "Only numbers allowed");
@@ -29,24 +48,6 @@ namespace WinformCore
                 errorProvider.SetError(textUserSSId , "");
             }
         }
-
-        #region ValidatingUserSSId
-
-        //private void textUserId_Validating(object sender , System.ComponentModel.CancelEventArgs e)
-        //{ 
-        //    //// didn't understand why out parameter is required
-        //    //int parsedValue;
-        //    //if (!int.TryParse(textUserSSId.Text , out parsedValue))
-        //    //{
-        //    //    epName.SetError(textUserSSId , "Only numbers allowed");
-        //    //}
-        //    //else
-        //    //{
-        //    //    e.Cancel = false;
-        //    //    epName.SetError(textUserSSId , "");
-        //    //}
-        //}
-
         #endregion
         private void textName_Validating(object sender , System.ComponentModel.CancelEventArgs e)
         {
@@ -132,7 +133,7 @@ namespace WinformCore
             //    }
             //    float number = 6.58f;
             //    textDailySalary.Text = string.Format("{0:0.00}" , number); 
-            #endregion
+
         }
         private void textDailySalary_Validating(object sender , System.ComponentModel.CancelEventArgs e)
         {
@@ -143,6 +144,7 @@ namespace WinformCore
             //    textMonthlySalary.Text = "";
             //}
         }
+        #endregion
         private void Temizle_Click(object sender , EventArgs e)
         {
             ClearTextBoxes(this);
@@ -185,6 +187,16 @@ namespace WinformCore
         //        epName.SetError(textName , "Name Required!");
         //    }
         //    return true;
+        //}
+
+        //int errorCount;
+        //void SetError(Control c , string message)
+        //{
+        //    if (message == "")
+        //        errorCount--;
+        //    else
+        //        errorCount++;
+        //    errorProvider.SetError(c , message);
         //}
     }
 }
