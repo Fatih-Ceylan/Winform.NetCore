@@ -35,7 +35,6 @@ namespace WinformCore
         }
 
         #region ValidatingUserSSId
-
         private void textUserSSId_Validating(object sender , System.ComponentModel.CancelEventArgs e)
         {
             if (!int.TryParse(textUserSSId.Text , out int parsedValue))
