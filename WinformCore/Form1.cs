@@ -175,7 +175,7 @@ namespace WinformCore
             }
         }
         void Clear()
-        {           /*Old clear method*/
+        {           /* Old clear method */
             //textUserSSId.Text = textName.Text = textSurname.Text = textPhone.Text = richTextAddress.Text = textMonthlySalary.Text = textDailySalary.Text = "";
         }
 
