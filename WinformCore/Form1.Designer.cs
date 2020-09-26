@@ -240,7 +240,7 @@
             this.groupBoxMilitary.Controls.Add(this.radioButton3);
             this.groupBoxMilitary.Controls.Add(this.radioButton2);
             this.groupBoxMilitary.Controls.Add(this.radioButton1);
-            this.groupBoxMilitary.Location = new System.Drawing.Point(183, 200);
+            this.groupBoxMilitary.Location = new System.Drawing.Point(183, 201);
             this.groupBoxMilitary.Name = "groupBoxMilitary";
             this.groupBoxMilitary.Size = new System.Drawing.Size(189, 86);
             this.groupBoxMilitary.TabIndex = 10;
