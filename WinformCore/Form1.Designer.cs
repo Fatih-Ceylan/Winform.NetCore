@@ -62,7 +62,7 @@
             // 
             // buttonShow
             // 
-            this.buttonShow.Location = new System.Drawing.Point(250, 368);
+            this.buttonShow.Location = new System.Drawing.Point(249, 368);
             this.buttonShow.Name = "buttonShow";
             this.buttonShow.Size = new System.Drawing.Size(122, 43);
             this.buttonShow.TabIndex = 14;
@@ -72,7 +72,7 @@
             // 
             // textPhone
             // 
-            this.textPhone.Location = new System.Drawing.Point(13, 218);
+            this.textPhone.Location = new System.Drawing.Point(14, 218);
             this.textPhone.Name = "textPhone";
             this.textPhone.PlaceholderText = "Telefon No Giriniz";
             this.textPhone.Size = new System.Drawing.Size(142, 23);
@@ -109,7 +109,7 @@
             // 
             // textDailySalary
             // 
-            this.textDailySalary.Location = new System.Drawing.Point(183, 41);
+            this.textDailySalary.Location = new System.Drawing.Point(182, 41);
             this.textDailySalary.Name = "textDailySalary";
             this.textDailySalary.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.textDailySalary.Size = new System.Drawing.Size(189, 23);
@@ -120,7 +120,7 @@
             // textMonthlySalary
             // 
             this.textMonthlySalary.Enabled = false;
-            this.textMonthlySalary.Location = new System.Drawing.Point(184, 99);
+            this.textMonthlySalary.Location = new System.Drawing.Point(183, 99);
             this.textMonthlySalary.Name = "textMonthlySalary";
             this.textMonthlySalary.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.textMonthlySalary.Size = new System.Drawing.Size(188, 23);
@@ -156,7 +156,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(12, 200);
+            this.label4.Location = new System.Drawing.Point(13, 200);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(64, 15);
             this.label4.TabIndex = 11;
@@ -165,7 +165,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(183, 23);
+            this.label5.Location = new System.Drawing.Point(182, 23);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(76, 15);
             this.label5.TabIndex = 11;
@@ -174,7 +174,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(183, 81);
+            this.label6.Location = new System.Drawing.Point(182, 81);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(64, 15);
             this.label6.TabIndex = 11;
@@ -206,7 +206,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(14, 257);
+            this.label9.Location = new System.Drawing.Point(15, 257);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(37, 15);
             this.label9.TabIndex = 14;
@@ -214,7 +214,7 @@
             // 
             // richTextAddress
             // 
-            this.richTextAddress.Location = new System.Drawing.Point(13, 275);
+            this.richTextAddress.Location = new System.Drawing.Point(14, 275);
             this.richTextAddress.Name = "richTextAddress";
             this.richTextAddress.Size = new System.Drawing.Size(142, 81);
             this.richTextAddress.TabIndex = 4;
@@ -240,7 +240,7 @@
             this.groupBoxMilitary.Controls.Add(this.radioButton3);
             this.groupBoxMilitary.Controls.Add(this.radioButton2);
             this.groupBoxMilitary.Controls.Add(this.radioButton1);
-            this.groupBoxMilitary.Location = new System.Drawing.Point(183, 201);
+            this.groupBoxMilitary.Location = new System.Drawing.Point(182, 201);
             this.groupBoxMilitary.Name = "groupBoxMilitary";
             this.groupBoxMilitary.Size = new System.Drawing.Size(189, 86);
             this.groupBoxMilitary.TabIndex = 10;
@@ -296,7 +296,7 @@
             this.groupBoxGender.Controls.Add(this.radioButton5);
             this.groupBoxGender.Controls.Add(this.radioMan);
             this.groupBoxGender.Controls.Add(this.radioWoman);
-            this.groupBoxGender.Location = new System.Drawing.Point(183, 136);
+            this.groupBoxGender.Location = new System.Drawing.Point(182, 136);
             this.groupBoxGender.Name = "groupBoxGender";
             this.groupBoxGender.Size = new System.Drawing.Size(189, 55);
             this.groupBoxGender.TabIndex = 7;
