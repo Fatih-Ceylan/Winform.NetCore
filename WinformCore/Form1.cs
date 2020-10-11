@@ -88,6 +88,7 @@ namespace WinformCore
                 errorProvider.SetError(textPhone , "");
             }
         }
+
         private void radioWoman_CheckedChanged(object sender , EventArgs e)
         {
             if (radioWoman.Checked)
@@ -177,6 +178,11 @@ namespace WinformCore
         void Clear()
         {           /* Old clear method */
             //textUserSSId.Text = textName.Text = textSurname.Text = textPhone.Text = richTextAddress.Text = textMonthlySalary.Text = textDailySalary.Text = "";
+        }
+
+        private void Form1_Load(object sender , EventArgs e)
+        {
+
         }
 
         //bool CheckEmpty()
