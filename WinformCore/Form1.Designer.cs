@@ -109,7 +109,7 @@
             // 
             // textDailySalary
             // 
-            this.textDailySalary.Location = new System.Drawing.Point(182, 41);
+            this.textDailySalary.Location = new System.Drawing.Point(183, 41);
             this.textDailySalary.Name = "textDailySalary";
             this.textDailySalary.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.textDailySalary.Size = new System.Drawing.Size(189, 23);
@@ -120,7 +120,7 @@
             // textMonthlySalary
             // 
             this.textMonthlySalary.Enabled = false;
-            this.textMonthlySalary.Location = new System.Drawing.Point(183, 99);
+            this.textMonthlySalary.Location = new System.Drawing.Point(184, 99);
             this.textMonthlySalary.Name = "textMonthlySalary";
             this.textMonthlySalary.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.textMonthlySalary.Size = new System.Drawing.Size(188, 23);
@@ -165,7 +165,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(182, 23);
+            this.label5.Location = new System.Drawing.Point(183, 23);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(76, 15);
             this.label5.TabIndex = 11;
@@ -174,7 +174,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(182, 81);
+            this.label6.Location = new System.Drawing.Point(183, 81);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(64, 15);
             this.label6.TabIndex = 11;
@@ -240,7 +240,7 @@
             this.groupBoxMilitary.Controls.Add(this.radioButton3);
             this.groupBoxMilitary.Controls.Add(this.radioButton2);
             this.groupBoxMilitary.Controls.Add(this.radioButton1);
-            this.groupBoxMilitary.Location = new System.Drawing.Point(182, 201);
+            this.groupBoxMilitary.Location = new System.Drawing.Point(183, 201);
             this.groupBoxMilitary.Name = "groupBoxMilitary";
             this.groupBoxMilitary.Size = new System.Drawing.Size(189, 86);
             this.groupBoxMilitary.TabIndex = 10;
@@ -296,7 +296,7 @@
             this.groupBoxGender.Controls.Add(this.radioButton5);
             this.groupBoxGender.Controls.Add(this.radioMan);
             this.groupBoxGender.Controls.Add(this.radioWoman);
-            this.groupBoxGender.Location = new System.Drawing.Point(182, 136);
+            this.groupBoxGender.Location = new System.Drawing.Point(183, 136);
             this.groupBoxGender.Name = "groupBoxGender";
             this.groupBoxGender.Size = new System.Drawing.Size(189, 55);
             this.groupBoxGender.TabIndex = 7;
@@ -340,6 +340,7 @@
             this.Controls.Add(this.buttonShow);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
             this.groupBoxMilitary.ResumeLayout(false);
             this.groupBoxMilitary.PerformLayout();
